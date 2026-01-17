@@ -1,0 +1,137 @@
+{
+  "clientName": "Employee HR Portal API",
+  "collectionName": "Employee HR Portal - Auth API",
+  "collectionId": "employee-hr-portal-auth",
+  "version": "1.0.0",
+  "description": "Thunder Client collection for Employee HR Portal Authentication API",
+  "folders": [
+    {
+      "name": "Health",
+      "id": "health"
+    },
+    {
+      "name": "Authentication",
+      "id": "auth"
+    }
+  ],
+  "requests": [
+    {
+      "name": "Health Check",
+      "id": "health-check",
+      "url": "http://localhost:3000/api/health",
+      "method": "GET",
+      "folder": "health",
+      "headers": [],
+      "params": [],
+      "body": {}
+    },
+    {
+      "name": "Register User",
+      "id": "register-user",
+      "url": "http://localhost:3000/api/auth/register",
+      "method": "POST",
+      "folder": "auth",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123!\",\n  \"role\": \"EMPLOYEE\"\n}",
+        "json": {
+          "email": "test@example.com",
+          "password": "Password123!",
+          "role": "EMPLOYEE"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "id": "login",
+      "url": "http://localhost:3000/api/auth/login",
+      "method": "POST",
+      "folder": "auth",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123!\"\n}",
+        "json": {
+          "email": "test@example.com",
+          "password": "Password123!"
+        }
+      }
+    },
+    {
+      "name": "Refresh Token",
+      "id": "refresh-token",
+      "url": "http://localhost:3000/api/auth/refresh",
+      "method": "POST",
+      "folder": "auth",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}",
+        "json": {
+          "refreshToken": "{{refreshToken}}"
+        }
+      }
+    },
+    {
+      "name": "Get Current User",
+      "id": "get-current-user",
+      "url": "http://localhost:3000/api/auth/me",
+      "method": "GET",
+      "folder": "auth",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{accessToken}}"
+        }
+      ],
+      "params": [],
+      "body": {}
+    },
+    {
+      "name": "Logout",
+      "id": "logout",
+      "url": "http://localhost:3000/api/auth/logout",
+      "method": "POST",
+      "folder": "auth",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{accessToken}}"
+        }
+      ],
+      "params": [],
+      "body": {}
+    }
+  ],
+  "environments": [
+    {
+      "name": "Local",
+      "id": "local",
+      "data": {
+        "baseUrl": "http://localhost:3000",
+        "accessToken": "",
+        "refreshToken": ""
+      }
+    }
+  ]
+}
+
